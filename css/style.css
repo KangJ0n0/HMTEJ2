@@ -1076,3 +1076,159 @@ img {
     max-width: 220px !important;
   }
 }
+
+/* ========== EXTRA SMALL MOBILE (max-width: 400px) ========== */
+@media screen and (max-width: 400px) {
+  .heading1 {
+    font-size: 1.5rem !important;
+  }
+
+  #home img {
+    max-width: 220px !important;
+  }
+}
+
+/* ========== ELEKTRO MAGAZINE RESPONSIVE ========== */
+/* Desktop */
+@media screen and (min-width: 1000px) {
+  .flex.flex-wrap.justify-center.gap-10 {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 2.5rem !important;
+  }
+
+  .flex.flex-wrap.justify-center.gap-10 > a {
+    width: 240px !important;
+    min-height: 380px !important;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  .flex.flex-wrap.justify-center.gap-10 {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+    padding: 0 2rem !important;
+  }
+
+  .flex.flex-wrap.justify-center.gap-10 > a {
+    width: 220px !important;
+    min-height: 360px !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .flex.flex-wrap.justify-center.gap-10 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .flex.flex-wrap.justify-center.gap-10 > a {
+    width: 100% !important;
+    max-width: 280px !important;
+    min-height: 380px !important;
+  }
+}
+
+/* ========== FOOTER RESPONSIVE - FIXED ========== */
+/* Base footer full width */
+footer {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Desktop & Tablet - default 3 columns */
+@media screen and (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  footer .max-w-7xl {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+
+  footer .border-t.border-gray-700 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+}
+
+/* Mobile - stack vertically but keep same styling */
+@media screen and (max-width: 767px) {
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  footer .max-w-7xl {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Keep items centered on mobile */
+  footer .grid > div {
+    text-align: center !important;
+  }
+
+  footer .flex.items-center {
+    justify-content: center !important;
+  }
+
+  footer h5 {
+    justify-content: center !important;
+  }
+
+  /* Copyright section responsive */
+  footer .border-t.border-gray-700 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  footer .w-\[80\%\] {
+    width: 90% !important;
+  }
+}
+
+/* ========== PODCAST RESPONSIVE ========== */
+/* Desktop */
+@media screen and (min-width: 1000px) {
+  .flex.flex-wrap.justify-center.gap-6 > a {
+    width: 360px !important;
+    height: 220px !important;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  .flex.flex-wrap.justify-center.gap-6 {
+    padding: 0 2rem !important;
+  }
+
+  .flex.flex-wrap.justify-center.gap-6 > a {
+    width: 340px !important;
+    height: 200px !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .flex.flex-wrap.justify-center.gap-6 {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 1rem !important;
+  }
+
+  .flex.flex-wrap.justify-center.gap-6 > a {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 200px !important;
+  }
+}
