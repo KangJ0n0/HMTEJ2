@@ -263,21 +263,19 @@
                   border border-emerald-500
                   transition-all duration-500
                   hover:border-green-500 hover:shadow-lg hover:shadow-green-500/40
-                  cursor-pointer bg-transparent"
-           style="width: 100%; max-width: 350px; min-height: auto;">
+                  cursor-pointer bg-transparent">
 
-        <!-- Poster dengan fixed height -->
+        <!-- Poster dengan fixed height - gambar tidak menutup teks -->
         <div class="flex items-center justify-center bg-black"
-             style="width: 100%; height: 220px; flex-shrink: 0;">
+             style="width: 100%; height: 220px; flex-shrink: 0; overflow: hidden;">
           <img src="img/49d9b1a0-ca5b-4e48-99fd-b3b1d1a6c305.jpeg" 
                alt="Acara 1" 
                style="width: 100%; height: 100%; object-fit: cover;"
-               class="transition-transform duration-500 hover:scale-105"
-               onclick="openImageModal(this.src)" />
+               class="transition-transform duration-500 hover:scale-105" />
         </div>
 
-        <!-- Info -->
-        <div class="p-4 flex flex-col flex-1">
+        <!-- Info - DIBAWAH gambar -->
+        <div class="p-4 flex flex-col flex-1 bg-gray-900">
           <h3 class="text-md font-bold text-white mb-1">Workshop Elektrikal</h3>
           <p class="text-gray-300 text-xs mb-3">
             28 Sep 2025 • 09:00 - 12:00 WIB • Aula Teknik Elektro
@@ -292,6 +290,7 @@
   </div>
 </section>
 
+
 <!-- TIMELINE KEGIATAN -->
 <section class="py-16">
   <div class="max-w-6xl mx-auto px-6">
@@ -299,16 +298,18 @@
     
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Card Kegiatan 1 -->
-      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow"
-           style="width: 100%; max-width: 350px; margin: 0 auto;">
-        <div style="width: 100%; height: 200px; overflow: hidden;">
+      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow flex flex-col">
+        <!-- Gambar dengan container fixed height -->
+        <div style="width: 100%; height: 192px; overflow: hidden; flex-shrink: 0;">
           <img src="img/49d9b1a0-ca5b-4e48-99fd-b3b1d1a6c305.jpeg" 
                alt="Poster 1" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+               style="width: 100%; height: 100%; object-fit: cover;"
+               class="transition-transform duration-500 group-hover:scale-110">
         </div>
         
         <!-- Overlay status untuk desktop -->
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="absolute top-0 left-0 right-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+             style="height: 192px;">
           Upcoming
         </div>
 
@@ -318,49 +319,51 @@
         </div>
 
         <!-- Konten tambahan -->
-        <div class="p-4 text-white">
+        <div class="p-4 text-white flex-1">
           <h3 class="text-lg font-bold mb-2">Kegiatan 1</h3>
           <p class="text-sm">Deskripsi singkat kegiatan 1.</p>
         </div>
       </div>
 
       <!-- Card Kegiatan 2 -->
-      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow"
-           style="width: 100%; max-width: 350px; margin: 0 auto;">
-        <div style="width: 100%; height: 200px; overflow: hidden;">
+      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow flex flex-col">
+        <div style="width: 100%; height: 192px; overflow: hidden; flex-shrink: 0;">
           <img src="img/49d9b1a0-ca5b-4e48-99fd-b3b1d1a6c305.jpeg" 
                alt="Poster 2" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+               style="width: 100%; height: 100%; object-fit: cover;"
+               class="transition-transform duration-500 group-hover:scale-110">
         </div>
         
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="absolute top-0 left-0 right-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+             style="height: 192px;">
           On-going
         </div>
         <div class="md:hidden bg-gray-900 text-white text-center py-2 font-semibold">
           On-going
         </div>
-        <div class="p-4 text-white">
+        <div class="p-4 text-white flex-1">
           <h3 class="text-lg font-bold mb-2">Kegiatan 2</h3>
           <p class="text-sm">Deskripsi singkat kegiatan 2.</p>
         </div>
       </div>
 
       <!-- Card Kegiatan 3 -->
-      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow"
-           style="width: 100%; max-width: 350px; margin: 0 auto;">
-        <div style="width: 100%; height: 200px; overflow: hidden;">
+      <div class="relative group bg-gray-800 rounded-lg overflow-hidden shadow flex flex-col">
+        <div style="width: 100%; height: 192px; overflow: hidden; flex-shrink: 0;">
           <img src="img/49d9b1a0-ca5b-4e48-99fd-b3b1d1a6c305.jpeg" 
                alt="Poster 3" 
-               style="width: 100%; height: 100%; object-fit: cover;">
+               style="width: 100%; height: 100%; object-fit: cover;"
+               class="transition-transform duration-500 group-hover:scale-110">
         </div>
         
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="absolute top-0 left-0 right-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+             style="height: 192px;">
           Finished
         </div>
         <div class="md:hidden bg-gray-900 text-white text-center py-2 font-semibold">
           Finished
         </div>
-        <div class="p-4 text-white">
+        <div class="p-4 text-white flex-1">
           <h3 class="text-lg font-bold mb-2">Kegiatan 3</h3>
           <p class="text-sm">Deskripsi singkat kegiatan 3.</p>
         </div>
