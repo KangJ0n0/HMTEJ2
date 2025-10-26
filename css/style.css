@@ -1137,31 +1137,42 @@ img {
   }
 }
 
-/* ========== FOOTER RESPONSIVE - FIXED ========== */
-/* Base footer full width */
+/* ========== FOOTER RESPONSIVE ========== */
+/* Base footer - semua teks center */
 footer {
   width: 100% !important;
-  margin: 0 !important;
 }
 
-/* Desktop & Tablet - default 3 columns */
+footer .grid {
+  text-align: center !important;
+}
+
+footer .grid > div {
+  text-align: center !important;
+}
+
+/* Pastikan semua elemen di footer center */
+footer h1,
+footer h5,
+footer p,
+footer ul,
+footer li {
+  text-align: center !important;
+}
+
+/* Flex items center */
+footer .flex {
+  justify-content: center !important;
+}
+
+/* Desktop - 3 columns */
 @media screen and (min-width: 768px) {
   footer .grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
-
-  footer .max-w-7xl {
-    padding-left: 2.5rem !important;
-    padding-right: 2.5rem !important;
-  }
-
-  footer .border-t.border-gray-700 {
-    margin-left: 2rem !important;
-    margin-right: 2rem !important;
-  }
 }
 
-/* Mobile - stack vertically but keep same styling */
+/* Mobile - 1 column */
 @media screen and (max-width: 767px) {
   footer .grid {
     grid-template-columns: 1fr !important;
@@ -1171,29 +1182,6 @@ footer {
   footer .max-w-7xl {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
-  }
-
-  /* Keep items centered on mobile */
-  footer .grid > div {
-    text-align: center !important;
-  }
-
-  footer .flex.items-center {
-    justify-content: center !important;
-  }
-
-  footer h5 {
-    justify-content: center !important;
-  }
-
-  /* Copyright section responsive */
-  footer .border-t.border-gray-700 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  footer .w-\[80\%\] {
-    width: 90% !important;
   }
 }
 
