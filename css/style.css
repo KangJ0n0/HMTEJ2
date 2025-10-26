@@ -39,15 +39,18 @@ body {
   background-size: 55px 55px; /* ukuran grid kecil */
 }
 .circle {
-  width: 4000px;
-  height: 4000px;
-  bottom: 0px;
+  width: 1000px;
+  height: 1000px;
+  left: 50%;
+  top: 50%; /* ganti dari bottom ke top */
+  transform: translate(-50%, -50%); /* center X & Y */
   border-radius: 50%;
   background: radial-gradient(circle, #161616, #161616, #161616, rgba(15, 188, 109, 1));
-  /* border: 5px solid rgba(15, 188, 109, 0.2); */
   position: absolute;
-  /* filter: blur(10px); */
+  z-index: -1;
+  opacity: 0.5;
 }
+
 .circle2 {
   width: 400px;
   height: 400px;
@@ -758,33 +761,6 @@ footer {
     line-height: 1.55em;
   }
 }
-/* Hero Swiper - Responsive Image Sizing */
-
-.hero-swiper {
-}
-
-.hero-swiper .swiper-wrapper {
-  width: 100%;
-  height: max-content !important;
-  padding-bottom: 64px !important;
-  transition-timing-function: linear !important;
-  position: relative;
-}
-
-.hero-swiper .swiper-slide > div {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-}
-
-.hero-swiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: #ffffff !important;
-}
 
 /* Swiper-Logo Profile Kabinet*/
 .swiper-wrapper.filosofi-wrapper {
@@ -814,16 +790,289 @@ footer {
 .swiper-pagination-bullet-active {
   background: #735aef !important;
 }
-/* Responsive */
-@media (max-width: 1024px) {
-  .hero-swiper .swiper-slide > div {
-    max-width: 500px;
+
+.hero-swiper .swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.hero-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #ffffff !important; /* Indigo */
+}
+
+/* ========== TAMBAHKAN CSS INI DI BAGIAN PALING BAWAH style.css ========== */
+/* ========== HAPUS SEMUA CSS RESPONSIVE YANG LAMA DAN GANTI DENGAN INI ========== */
+
+/* ========== RESPONSIVE FIXES & OVERRIDES ========== */
+
+/* Base responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== HOME SECTION - CENTERED ========== */
+#home {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 90vh;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+#home div {
+  flex: 1;
+  min-width: 300px;
+  max-width: 550px;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+#home img {
+  flex: 1;
+  width: 100% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+.heading1 {
+  font-size: clamp(2rem, 5vw, 3.8em) !important;
+  line-height: 1.2;
+  text-align: center !important;
+}
+
+.paragraph {
+  font-size: clamp(1rem, 2vw, 1.3em) !important;
+  line-height: 1.6;
+  text-align: center !important;
+}
+
+/* ========== BERITA TERBARU - CARD LAYOUT ========== */
+.flex.flex-wrap.gap-8 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+  width: 100% !important;
+}
+
+.flex.flex-wrap.gap-8 > div {
+  width: 100% !important;
+  max-width: 350px !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ========== ACARA ON-GOING - CARD LAYOUT ========== */
+.grid.grid-cols-1.sm\:grid-cols-2 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+  gap: 1.5rem !important;
+}
+
+.grid.grid-cols-1.sm\:grid-cols-2 > div {
+  width: 100% !important;
+  max-width: 350px !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ========== TIMELINE KEGIATAN - CARD LAYOUT ========== */
+.grid.md\:grid-cols-3 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+  gap: 1.5rem !important;
+}
+
+.grid.md\:grid-cols-3 > div {
+  width: 100% !important;
+  max-width: 350px !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ========== DESKTOP (min-width: 1000px) ========== */
+@media screen and (min-width: 1000px) {
+  /* Home section - align left on desktop */
+  #home {
+    justify-content: space-between !important;
+  }
+
+  #home div {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .heading1 {
+    text-align: left !important;
+  }
+
+  .paragraph {
+    text-align: left !important;
+  }
+
+  /* Desktop card layout - 3 columns */
+  .flex.flex-wrap.gap-8,
+  .grid.grid-cols-1.sm\:grid-cols-2,
+  .grid.md\:grid-cols-3 {
+    justify-content: center !important;
+  }
+
+  .flex.flex-wrap.gap-8 > div {
+    max-width: 350px !important;
+    flex: 0 1 calc(33.333% - 1.5rem) !important;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-2 > div {
+    max-width: 400px !important;
+    flex: 0 1 calc(50% - 1rem) !important;
+  }
+
+  .grid.md\:grid-cols-3 > div {
+    max-width: 350px !important;
+    flex: 0 1 calc(33.333% - 1.5rem) !important;
   }
 }
 
-@media (max-width: 768px) {
-  .hero-swiper .swiper-slide > div {
-    max-width: 100%;
-    aspect-ratio: 4 / 3;
+/* ========== TABLET (600px - 999px) ========== */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  .container.mx-auto {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  #home {
+    min-height: 70vh;
+    justify-content: center !important;
+    gap: 30px;
+  }
+
+  #home div {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  #home img {
+    order: -1;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Tablet - 2 columns */
+  .flex.flex-wrap.gap-8 > div,
+  .grid.md\:grid-cols-3 > div {
+    max-width: 320px !important;
+    flex: 0 1 calc(50% - 1rem) !important;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-2 > div {
+    max-width: 320px !important;
+    flex: 0 1 calc(50% - 1rem) !important;
+  }
+}
+
+/* ========== MOBILE (max-width: 600px) ========== */
+@media screen and (max-width: 600px) {
+  /* Container fix */
+  .container.mx-auto {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* HOME SECTION - CENTERED */
+  #home {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 40px 15px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    flex-direction: column !important;
+  }
+
+  #home div {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .heading1 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .paragraph {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  #home img {
+    order: -1 !important;
+    width: 70% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Mobile - 1 column, full width */
+  .flex.flex-wrap.gap-8,
+  .grid.grid-cols-1.sm\:grid-cols-2,
+  .grid.md\:grid-cols-3 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .flex.flex-wrap.gap-8 > div,
+  .grid.grid-cols-1.sm\:grid-cols-2 > div,
+  .grid.md\:grid-cols-3 > div {
+    max-width: 100% !important;
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  /* Sections padding */
+  section.py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  section .max-w-6xl,
+  section .fade-in {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ========== EXTRA SMALL MOBILE (max-width: 400px) ========== */
+@media screen and (max-width: 400px) {
+  .heading1 {
+    font-size: 1.5rem !important;
+  }
+
+  #home img {
+    max-width: 220px !important;
   }
 }
