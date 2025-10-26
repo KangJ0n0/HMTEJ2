@@ -1186,11 +1186,19 @@ footer .flex {
 }
 
 /* ========== PODCAST RESPONSIVE ========== */
+/* Base styles for podcast section */
+section iframe {
+  position: relative;
+  z-index: 1;
+}
+
 /* Desktop */
 @media screen and (min-width: 1000px) {
   .flex.flex-wrap.justify-center.gap-6 > a {
     width: 360px !important;
     height: 220px !important;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -1203,6 +1211,8 @@ footer .flex {
   .flex.flex-wrap.justify-center.gap-6 > a {
     width: 340px !important;
     height: 200px !important;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -1218,5 +1228,7 @@ footer .flex {
     width: 100% !important;
     max-width: 320px !important;
     height: 200px !important;
+    position: relative;
+    z-index: 1;
   }
 }
